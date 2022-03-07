@@ -1,0 +1,223 @@
+Comando | --- envia a saída de um comando para entrada de outro, permitindo a execução de dois comandos.
+
+Comando > --- Redireciona a saída de um comando para outro comando arquivo.
+
+Comando >> --- Redireciona a saída e adciona a mesma para um comando ou arquivo.
+
+Comando < --- Direciona a entrada de um arquivo para a saída de um comando.
+
+Comando & --- Este operador permite usar dois comandos e separar suas saídas no terminal
+
+Comando && --- Usado para que dois comandos só sejam executados se o primeiro for executado com sucesso
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+toutch nome_do_arquivo.txt --- Criar arquivo
+
+nano nome_do_arquivo.txt --- Editar arquivo
+
+cat nome_do_arquivo.txt --- Mostrar oque está no arquivo
+
+tac nome_do_arquivo.txt --- Inverter as linhas
+
+head nome_do_arquivo.txt --- Mostrar as 10 primeiras linhas de 1 arquivo
+
+tail nome_do_arquivo.txt --- Mostrar as 10 ultimas linhas de 1 arquivo
+
+cal --- Mostrar o calendario do mes corrente
+
+date --- Mostrar a data do dia corrente
+
+cat nome_do_arquivo.txt > nome_do_arquivo2.txt --- subistituir 1 informaçoes arquivo pelo outro
+
+cat nome_do_arquivo.txt >> nome_do_arquivo2.txt --- adicionar informaçoes de 1 arquivo em outro
+
+mv nome_do_arquivo.txt novo_nome_do_arquivo.txt --- alterar o nome de 1 arquivo
+
+cat nome_do_arquivo.txt | grep palavra --- procurar palavra em 1 arquivo
+
+file nome_do_arquivo.txt --- saber qual tipo de arquivo
+
+find ~ -name nome_do_arquivo.txt --- procurar o caminho para uma pasta/arquivo
+
+cat arquivo.txt | more  --- paginar um arquivo
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+zip arquivo.zip arquivo.txt --- zipa o arquivo
+zip arquivo.zip arquivo.txt arquivo2.txt arquivo3 --- zipa os arquivos colando eles dentro do arquivo.txt
+unzip arquivo.zip --- descompacta o arquivo
+rm arquivo.zip --- remove o arquivo zipado
+
+gzip arquivo.txt --- zipa o arquivo
+gzip -9 arquivo.txt --- zipa o arquivo usando a compactação máxima
+gunzip arquivo.txt.gz --- descompacta o arquivo
+
+bzip2 arquivo.txt --- compacta o arquivo
+bzip2 -d arquivo.txt.bz2 --- descompacta o arquivo
+
+sudo apt install rar --- instalar o rar
+rar a arquivo.rar arquivo2.txt --- coloca o arquivo2.rar dentro do arquivo.rar para compactar
+rar x arquivo.rar --- descompacta o arquivo
+rm arquivo.rar --- remove o arquivo zipado
+
+tar -cf arquivo_criado.tar arquivo.txt arquivo2.txt --- arquivo os arquivos dentro do arquivo_criado
+gzip arquivo.tar --- zipa o arquivo.tar
+tar -xvf arquivo.tar.gz --- descompactar o arquivo
+tar -xvf arquivo.tar.gz -C ~/Documentos --- extrai os arquivos de dentro para o diretório selecionado
+
+
+arch --- aparece quantos bit a maquina tem
+
+uname --- aparece o kernel da maquina
+
+uname - r --- aparece a versao do kernel
+
+uname - m --- aparece a arquitetura (bit) mesma coisa do comando arch
+
+free --- mostra a saida de memoria fisica e memoria swap
+
+du -h ~ --- mostra quanto o diretorio pessoal ultiliza do seu hd
+
+reboot --- renicia a maquina
+
+shutdown -h now --- desliga a maquina
+
+lshw --- mostra alguns caminhos de hardware 
+
+ls -a --- mostra as coisas dentro da pasta, até os arquivos e diretórios ocultos
+
+ls -lh --- exibe nome dos arquivos no diretório, tamanho do arquivo, data de criação, por quem foi criado, dono do usuário, os grupos que ele pertence,
+e as permissoes (r == leitura, w == escrita, x == execução, sempre na divisão (dono|grupo|outros))
+
+                                                                                                  r | w | x |
+chmod 3 numeros nome_do_arquivo --- muda as permissoes dos 3 grupos, dono, grupo e outros, (chmod 4 | 2 | 1 | para os 3 grupos, somar para adicionar mais 
+permissoes para 1 grupo ou mais, e colocar os outros do lado somando para mais de uma permissao e somente 1 numero para uma permissao)
+
+
+lsb_release -a --- mostra a versao do ubuntu
+
+echo -e "Texto qualquer\n" >> arquivo.txt --- adiciona comentario no arquivo
+
+history --- aparece o historico de comandos
+
+history -c --- limpa o historico
+
+alias nome_variavel='comando' --- apelidar comandos
+
+nl nome_arquivo.txt --- mostra o arquivo e a contagem de linhas dele, porém nao conta as linhas em branco
+
+wc -l arquivo.txt --- conta as linhas inclusive as que estao em branco
+
+wc -w arquivo.txt --- conta as palavras que estao no arquivo
+
+wc --help --- aparece os comandos do wc que podem ser ultilizados
+
+last reboot --- mostra todas informaçoes de reinicialização do sistema
+
+route -n --- mostra todas as tabelas de roteamento ip do nosso kernel
+
+time --- calcula o tempo de um comando que esta sendo processado (pode usar time outro_comando)
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+sudo apt install net-tools --- Faz o download desse pacote na internet para o buntu
+
+sudo adduser nomeusuario --- cria um usuario
+
+cat /etc/passwd --- mostra todos os usuarios
+
+su usuario --- trocar de usuario
+
+cat /etc/groups --- mostra os grupos
+
+groups --- mostra o grupo que o usuario pertence
+
+sudo addgroup grupo --- criar um grupo
+
+sudo adduser usuario grupo --- adicionar um usuario ao grupo
+sudo gpasswd -a usuario grupo --- adicionar um usuario ao grupo (precisa de um usuario que esteja como adm execute esse comando)
+
+sudo gpasswd -d usuario grupo --- remove um usuario do grupo
+
+sudo groupdel grupo --- exclui o grupo
+
+sudo usuario --- mudar de usuario
+
+logname --- mostra o usuario logado
+
+passwd usuario --- mudar senha do usuario
+
+id --- mostras os grupos do usuario logado
+
+userdel -r usuario --- remover o usuario
+
+sudo apt install pacote --- faz o download de pacote
+
+sudo apt upgrade nmap --- faz a atualizacao do pacote
+
+sudo apt remove nmap --- faz a remoção do pacote
+
+sudo apt update && apt upgrade --- faz atualização do sistema
+
+sudo su --- eleva o privilegio (como se fosse entrar como adm no windows)
+
+sudo dpkg -i --- instala pacotes do tipo .deb (pkgs.org)
+
+sudo dpkg -I pacote.deb --- mostra a descricao do pacote
+
+sudo dpkg -r pacote.deb --- remove o pacote.deb (PEGAR O NOME DO ARQUIVO COM O COMANDO sudo dpkg -I pacote.deb)
+
+sudo apt install traceroute --- Faz o download do comando traceroute
+traceroute www.site.com --- traz informações do caminho da sua maquina até o site informado
+
+sudo apt install whois --- Faz o download do comando whois
+whois www.site.com --- traz informaçoes de rede, o dominio, id do dono do dominio, servidor de dns, resumindo informações de dominio
+
+ifconfig --- abre a interface de rede, para verificar o ipv4/ipv6/mask/ip publico/ether
+
+hostname --- traz o nome do computador na rede
+
+hostname -I --- traz o endereço ip na rede
+
+hostname -i --- traz o endereço de loop back
+
+who --- mostra como estamos logado na rede
+
+whoaim --- mostra o nome do usuario logado na rede
+
+ping www.site.com --- mostra pacotes de ping
+
+dig www.site.com --- retorna um dns, que é endereço de ip de um site
+
+dig www.site.com +short --- traz o ip do google
+
+finger --- traz a informação do usuario no nosso host
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+								Preciso usar a distribuição GNU/Linux Fedora
+
+sudo rpm -ivh --nodeps pacote.rpm --- Instala pacotes.rpm (pkgs.org)
+
+sudo rpm -U pacote.rpm --- atualiza o pacote.rpm
+
+sudo rpm -e pacote.rpm --- remoção do pacote rpm
+
+sudo yum install pacote --- Download e instalação de pacote através do gerenciador yum
+
+sudo yum update pacote --- Atualização do pacote através do gerenciador yum
+
+sudo yum remove pacote --- Remoção do pacote através do gerenciador yum
+
+
+
+
+
